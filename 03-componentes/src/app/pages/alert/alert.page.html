@@ -8,8 +8,16 @@
   </ion-toolbar>
 </ion-header>
 -->
-<app-header titulo="alert"></app-header>
+<app-header [titulo]="this.alert"></app-header>
 
-<ion-content>
+<ion-content padding>
+
+  <ion-button (click)="presentAlert()" expand="full" color="primary">
+    Mostrar Alerta
+  </ion-button>
+  
+  <ion-button (click)="presentAlertPrompt()" expand="full" color="primary">
+      Ingresar Campo
+  </ion-button>
 
 </ion-content>
