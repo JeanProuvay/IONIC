@@ -27,9 +27,14 @@ export class InicioPage implements OnInit {
       icon: 'radio-button-on',
       name: 'Botones y Router',
       redirectTo: '/botones'
+    },
+    {
+      icon: 'card',
+      name: 'Card',
+      redirectTo: '/card'
     }
   ];
-  
+
   constructor() { }
 
   ngOnInit() {
