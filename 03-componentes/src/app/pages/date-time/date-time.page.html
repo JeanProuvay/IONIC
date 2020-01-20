@@ -3,6 +3,7 @@
 <ion-content padding>
 
   <ion-list>
+
     <ion-list-header>
       <ion-label>Datos de nacimiento</ion-label>
     </ion-list-header>
@@ -17,6 +18,50 @@
         [(ngModel)]="fechaNacimiento">
       </ion-datetime>
     </ion-item>
+  
+    <ion-item>
+      <ion-label>Fecha de Nacimiento</ion-label>
+      <ion-datetime 
+        placeholder="Nacimiento" 
+        display-format="DD MMMM YYYY"
+        cancelText="Cancelar!"
+        [ngModel]="fechaNacimiento2.toISOString()">
+      </ion-datetime>
+    </ion-item>
+  
   </ion-list>
+
+  <ion-list-header>
+    <ion-label>Restricciones</ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Min y Max</ion-label>
+    <ion-datetime 
+      placeholder="dd-mm-yyyy" 
+      display-format="DD MMMM YYYY"
+      min="1993-04-23"
+      max="1999-12-12">
+    </ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Años</ion-label>
+    <ion-datetime 
+      placeholder="YYYY" 
+      display-format="YYYY"
+      min="1990"
+      max="1999"
+      value="1993">
+    </ion-datetime>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Custom Date</ion-label>
+      <ion-datetime 
+        [pickerOptions]="customPickerOptions"
+        [(ngModel)]="customDate">
+      </ion-datetime>
+    </ion-item>
 
 </ion-content>

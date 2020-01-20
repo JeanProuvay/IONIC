@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-date-time',
@@ -8,10 +9,31 @@ import { Component, OnInit } from '@angular/core';
 export class DateTimePage implements OnInit {
 
   fechaNacimiento: Date = new Date();
+  fechaNacimiento2: Date = new Date();
+  customPickerOptions;
+  customDate;
 
   constructor() { }
 
   ngOnInit() {
+    this.customPickerOptions = {
+      buttons: [{
+        text: 'Save',
+        handler: (evento) => {
+          console.log('Clicked Save!');
+          console.log(evento);
+        }
+      },{
+        text: 'Log',
+        handler: () => {
+          console.log('Clicked Log. Do not Dismiss.');
+          return false;
+        }
+      }
+    ]
+    };
   }
+
+  //console.log('Date', new Date(event.detail.value));
 
 }
