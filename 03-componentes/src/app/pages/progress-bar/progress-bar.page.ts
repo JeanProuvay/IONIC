@@ -12,4 +12,7 @@ export class ProgressBarPage implements OnInit {
   ngOnInit() {
   }
 
+  cambioRango(evento){
+    console.log(evento);
+  }
 }

@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ProgressBarPageRoutingModule } from './progress-bar-routing.module';
 
 import { ProgressBarPage } from './progress-bar.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProgressBarPageRoutingModule
+    ProgressBarPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ProgressBarPage]
 })
