@@ -1,9 +1,17 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>refresher</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Refresh"></app-header>
 
 <ion-content>
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <h1 *ngIf="items.length === 0">Pull to Refresh</h1>
+
+  <ion-list *ngIf="items.length > 0">
+    <ion-item *ngFor="let item of items; let i = index">
+      Item {{ i + 1 }}
+    </ion-item>
+  </ion-list>
 
 </ion-content>
