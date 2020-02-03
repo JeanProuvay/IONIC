@@ -9,18 +9,20 @@ import { DataService } from '../../services/data.service';
 export class SearchbarPage implements OnInit {
 
   albums: any[] = [];
+  textoBuscar = '';
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getAlbums().subscribe( respuesta => {
+      console.log(respuesta);
+      this.albums = respuesta;
+    });
   }
 
   buscar(evento) {
-
-    this.dataService.getAlbums().subscribe( respuesta => {
-      console.log(evento);
-      this.albums = respuesta;
-    });
+    this.textoBuscar = evento.detail.value;
+    console.log(this.textoBuscar);
   }
 
 }
